@@ -19,11 +19,11 @@ Plug 'dracula/vim', {'as':'dracula'}
 Plug 'jaxbot/semantic-highlight.vim'
 call plug#end()
 
-source ~/.config/nvim/pulgged_script/coc.vim
-source ~/.config/nvim/pulgged_script/vista.vim
-source ~/.config/nvim/pulgged_script/airline.vim
-source ~/.config/nvim/pulgged_script/nerdtree.vim
-source ~/.config/nvim/pulgged_script/undotree.vim
+source ~/.config/nvim/plugged_scripts/coc.vim
+source ~/.config/nvim/plugged_scripts/vista.vim
+source ~/.config/nvim/plugged_scripts/airline.vim
+source ~/.config/nvim/plugged_scripts/nerdtree.vim
+source ~/.config/nvim/plugged_scripts/undotree.vim
 
 
 

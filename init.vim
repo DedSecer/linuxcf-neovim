@@ -16,6 +16,7 @@ Plug 'mhinz/vim-startify'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim', {'as':'dracula'}
+Plug 'jaxbot/semantic-highlight.vim'
 call plug#end()
 
 source ~/.config/nvim/pulgged_script/coc.vim
@@ -54,6 +55,8 @@ map sh <C-w>t<C-w>K
 
 map - 0
 map = $
+
+map <C-u>  :undo
 
 set number
 set relativenumber

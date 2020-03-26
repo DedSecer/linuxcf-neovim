@@ -1,11 +1,11 @@
 #! /usr/bin/bash
-vim_path=~/.config/nvim
+nvim_path=~/.config/nvim
 
-mkdir -p $nvim_path
-ln ./init.vim ./coc-settings.json $nvim_path/
+mkdir -p ${nvim_path}
+ln ./init.vim ./coc-settings.json ${nvim_path}/
 
-mkdir -p $nvim_path/autoload
-ln ./autoload/plug.vim $nvim_path/autoload
+mkdir -p ${nvim_pat}h/autoload
+ln ./autoload/plug.vim ${nvim_pat}h/autoload
 
 ps_path=plugged_scripts
 mkdir -p ${nvim_path}/${ps_path}

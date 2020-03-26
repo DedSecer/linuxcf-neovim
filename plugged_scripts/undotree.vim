@@ -9,4 +9,4 @@ set directory=~/.local/tmp/nvim/backup,
 "endif
 set undofile
 set undodir=~/.local/nvim/tmp/undo,
-map U :UndotreeShow<CR>
+map <c-u> :UndotreeToggle<CR>

@@ -1,3 +1,3 @@
 "Plugged 'Nerdtree' config
 
-map T :NERDTreeToggle<CR>
+map <c-t> :NERDTreeToggle<CR>

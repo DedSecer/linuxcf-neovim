@@ -56,7 +56,7 @@ map sh <C-w>t<C-w>K
 map - 0
 map = $
 
-map <C-u>  :undo
+map U  :redo<CR>
 
 set number
 set relativenumber

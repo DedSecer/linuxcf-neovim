@@ -5,7 +5,7 @@ endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
 
-map F :Vista<CR>
+map <c-f> :Vista!!<CR>
 
 " By default vista.vim never run if you don't call it explicitly.
 "

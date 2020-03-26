@@ -1,4 +1,4 @@
-! /usr/bin/bash
+#! /usr/bin/bash
 vim_path=~/.config/nvim
 
 mkdir -p $nvim_path

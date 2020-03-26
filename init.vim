@@ -9,7 +9,7 @@ set nocompatible
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim',{'do':'cd app & yarn install'}
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 "Plug 'neomake/neomake'

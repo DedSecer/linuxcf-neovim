@@ -11,7 +11,7 @@ mkdir -p ${nvim_path}
 ${ln_cmd} ./init.vim ./coc-settings.json ${nvim_path}/
 
 mkdir -p ${nvim_path}/autoload
-${ln_cmd} ./autoload/plug.vim ${nvim_path}/autoload
+${ln_cmd} ./autoload/plug.vim ${nvim_path}/autoload/
 
 ps_path=plugged_scripts
 mkdir -p ${nvim_path}/${ps_path}

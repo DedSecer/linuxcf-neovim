@@ -77,16 +77,30 @@ if has("autocmd")
 	endif
 "=======================
 
+"set the type of fishfile
+au BufRead,BufNewFile *.fish		setfiletype conf
+
 
 "==============
-noremap r :call RunFile()<CR>
+noremap <C-r> :call RunFile()<CR>
+
 func! RunFile()	
+	
+	"get the extension of file
+	let ext=expand('%:e')
+	
 	exec "w"
-	if &filetype == 'python'
-		set splitbelow
-		:sp
+	set splitbelow
+	:sp
+
+	if ext == 'py'
 		term python -i %
-		:res -5<CR>
+	elseif ext == 'sh'
+		term bash -c %
+	elseif ext  == 'fish'
+		term fish % 
 	endif
+	
+	:res -5<CR>
 endfunc
 "=============

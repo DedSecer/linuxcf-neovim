@@ -87,18 +87,18 @@ noremap <C-r> :call RunFile()<CR>
 func! RunFile()	
 	
 	"get the extension of file
-	let ext=expand('%:e')
-	
+	let $ext=expand('%:e')
+	let $filen=expand('%:p')	
 	exec "w"
 	set splitbelow
 	:sp
 
-	if ext == 'py'
-		term python -i %
-	elseif ext == 'sh'
-		term bash -c %
-	elseif ext  == 'fish'
-		term fish % 
+	if $ext == 'py'
+		term python -i $filen
+	elseif $ext == 'sh'
+		term bash -c $filen 
+	elseif $ext  == 'fish'
+		term fish $filen
 	endif
 	
 	:res -5<CR>

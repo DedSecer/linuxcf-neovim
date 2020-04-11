@@ -1,8 +1,14 @@
 "Plugged 'COC' config
 
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-json' ]
+"mapping
+map <c-s> :silent call CocActionAsync('highlight')<CR>
+map <c-e> :CocCommand explorer<CR>
+
+
+
+let g:coc_global_extensions = ['coc-python','coc-vimlsp','coc-html','coc-git','coc-json','coc-explorer']
 let g:markdown_fenced_languages = ['vim','help']
-"set statusline^=%{coc#status()}
+set statusline^=%{coc#status()}
 
 
 
@@ -14,7 +20,6 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 
 " Use <TAB> for selections ranges.
 " NOTE: Requires 'textDocument/selectionRange' support from the language server.
@@ -30,8 +35,6 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if has('patch8.1.1068')
@@ -41,3 +44,7 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+
+
+"coc-highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')

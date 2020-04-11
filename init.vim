@@ -8,7 +8,6 @@ set nocompatible
 "==============
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'iamcco/markdown-preview.nvim',{'do':'cd app & yarn install'}
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
@@ -17,17 +16,17 @@ Plug 'liuchengxu/vista.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'jaxbot/semantic-highlight.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 source ~/.config/nvim/plugged_scripts/coc.vim
 source ~/.config/nvim/plugged_scripts/vista.vim
 source ~/.config/nvim/plugged_scripts/airline.vim
-source ~/.config/nvim/plugged_scripts/nerdtree.vim
 source ~/.config/nvim/plugged_scripts/undotree.vim
 
 
 
-
+"key map
 
 let mapleader=" "
 

@@ -69,6 +69,14 @@ set autoindent
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ''<ESC>i
+
+
 
 "======Save History=====
 if has("autocmd") 

@@ -7,18 +7,20 @@ set nocompatible
 "=  vim-plug  =
 "==============
 call plug#begin('~/.config/nvim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'iamcco/markdown-preview.nvim',{'do':'cd app & yarn install'}
-Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-"Plug 'neomake/neomake'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mbbill/undotree'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'dracula/vim', {'as':'dracula'}
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'iamcco/markdown-preview.nvim',{'do':'cd app & yarn install'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'honza/vim-snippets'
+Plug 'dracula/vim', {'as':'dracula'}
+Plug 'arzg/vim-colors-xcode'
+"Plug 'neomake/neomake'
 call plug#end()
 
 source ~/.config/nvim/plugged_scripts/coc.vim
@@ -59,15 +61,10 @@ map = $
 
 map U  :redo<CR>
 
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
 
 set number
 set relativenumber
+set ignorecase
 set smartcase
 set scrolloff=4
 set noexpandtab
@@ -78,9 +75,10 @@ set autoindent
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-
-
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+"colorscheme command
+command Cd colorscheme dracula
 
 "======Save History=====
 if has("autocmd") 

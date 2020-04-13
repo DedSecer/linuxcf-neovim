@@ -18,6 +18,7 @@ Plug 'dracula/vim', {'as':'dracula'}
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'honza/vim-snippets'
 call plug#end()
 
 source ~/.config/nvim/plugged_scripts/coc.vim

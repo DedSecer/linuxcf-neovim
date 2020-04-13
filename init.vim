@@ -57,6 +57,13 @@ map = $
 
 map U  :redo<CR>
 
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+
 set number
 set relativenumber
 set smartcase
@@ -69,14 +76,9 @@ set autoindent
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
 
 
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 "======Save History=====
 if has("autocmd") 

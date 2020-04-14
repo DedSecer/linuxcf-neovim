@@ -1,34 +1,33 @@
-" This line makes pacman-installed global Arch Linux vim packages work.
-source /usr/share/nvim/archlinux.vim
-set nocompatible  
+"====================
+"=     dein.vim     =
+"====================
 
+if &compatible
+  set nocompatible
+endif
+let dein_path="~/.config/nvim/dein"
+set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
-"==============
-"=  vim-plug  =
-"==============
-call plug#begin('~/.config/nvim/plugged')
-Plug 'mhinz/vim-startify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mbbill/undotree'
-Plug 'liuchengxu/vista.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'jaxbot/semantic-highlight.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'iamcco/markdown-preview.nvim',{'do':'cd app & yarn install'}
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'dracula/vim', {'as':'dracula'}
-Plug 'arzg/vim-colors-xcode'
-"Plug 'neomake/neomake'
-call plug#end()
+echo dein_path
+if dein#load_state(dein_path)
+	call dein#begin(dein_path)
+
+	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
+	
+	call dein#add('neoclide/coc.nvim', {'rev':'release'})
+	call dein#add('wsdjeg/dein-ui.vim')
+	call dein#add('mhinz/vim-startify')
+	call dein#end()
+	call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
 
 source ~/.config/nvim/plugged_scripts/coc.vim
-source ~/.config/nvim/plugged_scripts/vista.vim
-source ~/.config/nvim/plugged_scripts/airline.vim
-source ~/.config/nvim/plugged_scripts/undotree.vim
-
-
+"source ~/.config/nvim/plugged_scripts/vista.vim
+"source ~/.config/nvim/plugged_scripts/airline.vim
+"source ~/.config/nvim/plugged_scripts/undotree.vim
 
 "key map
 

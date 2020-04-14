@@ -11,12 +11,23 @@ set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 echo dein_path
 if dein#load_state(dein_path)
 	call dein#begin(dein_path)
-
 	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
 	
 	call dein#add('neoclide/coc.nvim', {'rev':'release'})
-	call dein#add('wsdjeg/dein-ui.vim')
 	call dein#add('mhinz/vim-startify')
+	call dein#add('haya14busa/dein-command.vim')	
+	call dein#add('honza/vim-snippets')
+	call dein#add('jiangmiao/auto-pairs')
+	call dein#add('mbbill/undotree')
+	call dein#add('liuchengxu/vista.vim')
+	call dein#add('vim-airline/vim-airline')
+	call dein#add('jaxbot/semantic-highlight.vim')
+	call dein#add('airblade/vim-gitgutter')
+	call dein#add('iamcco/markdown-preview.nvim',{'build':'cd app & yarn install'})
+	call dein#add('mg979/vim-visual-multi')
+	call dein#add('dracula/vim',{'name':'dracula'})
+	call dein#add('arzg/vim-colors-xcode')
+
 	call dein#end()
 	call dein#save_state()
 endif
@@ -25,9 +36,9 @@ filetype plugin indent on
 syntax enable
 
 source ~/.config/nvim/plugged_scripts/coc.vim
-"source ~/.config/nvim/plugged_scripts/vista.vim
-"source ~/.config/nvim/plugged_scripts/airline.vim
-"source ~/.config/nvim/plugged_scripts/undotree.vim
+source ~/.config/nvim/plugged_scripts/vista.vim
+source ~/.config/nvim/plugged_scripts/airline.vim
+source ~/.config/nvim/plugged_scripts/undotree.vim
 
 "key map
 

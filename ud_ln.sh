@@ -1,12 +1,33 @@
 #! /usr/bin/bash
 
 #update file from github and make hard link to your config directory
+#-n to set ln_cmd 
+#-g to set no git pull
 
 nvim_path="${HOME}/.config/nvim"
-ln_cmd='ln -f'
+ln_cmd='ln -i'
+
+while [ -n "$1" ]
+do 
+
+	case ${1} in
+		-n)
+			ln_cmd=${2}
+			shift
+			;;
+		-g)
+			git_pull=false
+			;;
+		*)
+			echo "Unknown Option '${1}'"
+			exit 1
+			;;
+	esac
+	shift
+done
 
 function lnr() {
-	#a function to make hardlinked_subtree
+h#a function to make hardlinked_subtree excluding ud_ln.sh
 	#${1}:from path , ${2}:to path , ${3}:ln_cmd
 
 	if test -d ${1}; then
@@ -16,10 +37,10 @@ function lnr() {
 			done	
 	
 	elif test -f ${1}; then
-		 ${3} ${1} ${2}
+		[ ${1} == './ud_ln.sh' ] || ${3} ${1} ${2}
 	fi		
 }
 
-#git pull
+${git_pull} && git pull
 
 lnr . ${nvim_path} "${ln_cmd}"

@@ -20,6 +20,6 @@ function lnr() {
 	fi		
 }
 
-#git pull
+git pull
 
 lnr . ${nvim_path} "${ln_cmd}"

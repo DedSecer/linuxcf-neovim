@@ -102,7 +102,7 @@ func! RunFile()
 	let $filen=expand('%:p')	
 	exec "w"
 	set splitbelow
-	:sp
+	sp
 
 	if $ext == 'py'
 		term python -i $filen

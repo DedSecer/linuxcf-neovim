@@ -27,7 +27,7 @@ do
 done
 
 function lnr() {
-h#a function to make hardlinked_subtree excluding ud_ln.sh
+	#a function to make hardlinked_subtree excluding ud_ln.sh
 	#${1}:from path , ${2}:to path , ${3}:ln_cmd
 
 	if test -d ${1}; then

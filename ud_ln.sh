@@ -41,6 +41,6 @@ function lnr() {
 	fi		
 }
 
-${git_pull} && git pull
+${git_pull} && git pull ; git submodule update --init
 
 lnr . ${nvim_path} "${ln_cmd}"

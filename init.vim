@@ -23,6 +23,7 @@ if dein#load_state(dein_path)
 	call dein#add('jaxbot/semantic-highlight.vim')
 	call dein#add('mhinz/vim-signify')
 	call dein#add('iamcco/markdown-preview.nvim',{'on_ft':['markdown','pandoc.markdown','rmd'],'build':'sh -c "cd app & yarn install"'})
+	call dein#add('Yggdroot/indentLine')
 	call dein#add('mg979/vim-visual-multi')
 	call dein#add('dracula/vim',{'name':'dracula'})
 	call dein#add('arzg/vim-colors-xcode')
@@ -32,11 +33,16 @@ if dein#load_state(dein_path)
 endif
 
 
+
+let g:term=expand('echo $TERM')
+
+
 source ~/.config/nvim/plugged_scripts/coc.vim
 source ~/.config/nvim/plugged_scripts/vista.vim
 source ~/.config/nvim/plugged_scripts/airline.vim
 source ~/.config/nvim/plugged_scripts/undotree.vim
 source ~/.config/nvim/plugged_scripts/dein.vim
+source ~/.config/nvim/plugged_scripts/indentline.vim
 
 "key map
 
@@ -87,12 +93,18 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 "colorscheme command
 command Cd colorscheme dracula
+command Cxd colorscheme xcodedark
+command Cxdh colorscheme xcodedarkhc
+command Cxl colorscheme xcodelight
+command Cxlh colorscheme xcodelighthc
+
 
 "======Save History=====
 if has("autocmd") 
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
 	endif
 "=======================
+
 
 "set the type of fishfile
 au BufRead,BufNewFile *.fish		setfiletype conf

@@ -34,7 +34,7 @@ endif
 
 
 
-let g:term=expand('echo $TERM')
+let g:term=expand('$TERM')
 
 
 source ~/.config/nvim/plugged_scripts/coc.vim

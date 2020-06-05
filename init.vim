@@ -47,6 +47,7 @@ source ~/.config/nvim/plugged_scripts/indentline.vim
 "key map
 
 let mapleader=" "
+noremap r s
 
 map Q :q<CR>
 noremap J 5j
@@ -69,12 +70,17 @@ map th :-tabnext<CR>
 map tl :+tabnext<CR>
 map sv <C-w>t<C-w>H
 map sh <C-w>t<C-w>K
+noremap sh H
+noremap sl L
+noremap sm M
 
 map - 0
 map = $
 
 map U  :redo<CR>
 
+map <c-y> "+y
+map <c-p> "+gp
 
 set number
 set relativenumber

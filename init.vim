@@ -52,6 +52,8 @@ source ~/.config/nvim/plugged_scripts/indentline.vim
 let mapleader=" "
 noremap r s
 
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
+
 map Q :q<CR>
 noremap J 5j
 noremap K 5k

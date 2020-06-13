@@ -29,6 +29,7 @@ if dein#load_state(dein_path)
 	call dein#add('dracula/vim',{'name':'dracula'})
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('trevordmiller/nova-vim')
+	call dein#add('cocopon/iceberg.vim')
 
 	call dein#end()
 	call dein#save_state()
@@ -108,7 +109,7 @@ if has("autocmd")
 
 
 "set the type of fishfile
-au BufRead,BufNewFile *.fish		setfiletype conf
+au BufRead,BufNewFile *.fish	setfiletype conf
 
 
 "==============

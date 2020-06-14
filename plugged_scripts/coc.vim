@@ -51,7 +51,7 @@ endfunction
 
 
 "coc-highlight
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "coc-josn
 autocmd FileType json syntax match Comment +\/\/.\+$+

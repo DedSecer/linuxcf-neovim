@@ -6,6 +6,7 @@ if &compatible
   set nocompatible
 endif
 let dein_path="~/.config/nvim/dein"
+let g:dein#types#git#clone_depth=1
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state(dein_path)
@@ -26,7 +27,6 @@ if dein#load_state(dein_path)
 	call dein#add('Yggdroot/indentLine')
 	call dein#add('mg979/vim-visual-multi')
 	call dein#add('dracula/vim',{'name':'dracula'})
-	call dein#add('arzg/vim-colors-xcode')
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('trevordmiller/nova-vim')
 
@@ -98,13 +98,6 @@ set autoindent
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-
-"colorscheme command
-command Cd colorscheme dracula
-command Cxd colorscheme xcodedark
-command Cxdh colorscheme xcodedarkhc
-command Cxl colorscheme xcodelight
-command Cxlh colorscheme xcodelighthc
 
 
 "======Save History=====

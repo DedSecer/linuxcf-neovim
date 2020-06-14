@@ -27,6 +27,8 @@ if dein#load_state(dein_path)
 	call dein#add('mg979/vim-visual-multi')
 	call dein#add('dracula/vim',{'name':'dracula'})
 	call dein#add('arzg/vim-colors-xcode')
+	call dein#add('arcticicestudio/nord-vim')
+	call dein#add('trevordmiller/nova-vim')
 
 	call dein#end()
 	call dein#save_state()

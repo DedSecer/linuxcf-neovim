@@ -35,40 +35,40 @@ if argc() > 0
   endwhile
 endif
 
-fun! s:Forward()
-  " Searching forward
-  noremap <script> n H$nzt<SID>L
-  if &wrap
-    noremap <script> N H0Nzt<SID>L
-  else
-    noremap <script> N Hg0Nzt<SID>L
-  endif
-  cnoremap <silent> <script> <CR> <CR>:cunmap <lt>CR><CR>zt<SID>L
-endfun
+"fun! s:Forward()
+"  " Searching forward
+"  noremap <script> n H$nzt<SID>L
+"  if &wrap
+"    noremap <script> N H0Nzt<SID>L
+"  else
+"    noremap <script> N Hg0Nzt<SID>L
+"  endif
+"  cnoremap <silent> <script> <CR> <CR>:cunmap <lt>CR><CR>zt<SID>L
+"endfun
 
-fun! s:Backward()
-  " Searching backward
-  if &wrap
-    noremap <script> n H0nzt<SID>L
-  else
-    noremap <script> n Hg0nzt<SID>L
-  endif
-  noremap <script> N H$Nzt<SID>L
-  cnoremap <silent> <script> <CR> <CR>:cunmap <lt>CR><CR>zt<SID>L
-endfun
+"fun! s:Backward()
+"  " Searching backward
+"  if &wrap
+"    noremap <script> n H0nzt<SID>L
+"  else
+"    noremap <script> n Hg0nzt<SID>L
+"  endif
+"  noremap <script> N H$Nzt<SID>L
+"  cnoremap <silent> <script> <CR> <CR>:cunmap <lt>CR><CR>zt<SID>L
+"endfun
 
-fun! s:NextPage()
-  if line(".") == line("$")
-    if argidx() + 1 >= argc()
-      " Don't quit at the end of the last file
-      return
-    endif
-    next
-    1
-  else
-    exe "normal! \<C-F>"
-  endif
-endfun
+"fun! s:NextPage()
+"  if line(".") == line("$")
+"    if argidx() + 1 >= argc()
+"      " Don't quit at the end of the last file
+"      return
+"    endif
+"    next
+"    1
+"  else
+"    exe "normal! \<C-F>"
+"  endif
+"endfun
 
 fun! s:End()
   set ma
@@ -171,11 +171,6 @@ set nows
 let s:lz = &lz
 set lz
 
-" Allow the user to define a function, which can set options specifically for
-" this script.
-if exists('*LessInitFunc')
-  call LessInitFunc()
-endif
 
 " Used after each command: put cursor at end and display position
 if &wrap
@@ -199,7 +194,6 @@ map H h
 
 noremap j <c-e>
 noremap k <c-y>
-
 
 " If 'foldmethod' was changed keep the "z" commands, e.g. "zR" to open all
 " folds.
@@ -228,16 +222,16 @@ noremap <script> % %<SID>L
 map p %
 
 " Search
-noremap <script> / H$:call <SID>Forward()<CR>/
-if &wrap
-  noremap <script> ? H0:call <SID>Backward()<CR>?
-else
-  noremap <script> ? Hg0:call <SID>Backward()<CR>?
-endif
+"noremap <script> / H$:call <SID>Forward()<CR>/
+"if &wrap
+"  noremap <script> ? H0:call <SID>Backward()<CR>?
+"else
+"  noremap <script> ? Hg0:call <SID>Backward()<CR>?
+"endif
 
 
-call s:Forward()
-cunmap <CR>
+"call s:Forward()
+"cunmap <CR>
 
 " Quitting
 noremap q :q<CR>

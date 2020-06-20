@@ -84,6 +84,8 @@ map U  :redo<CR>
 map <c-y> "+y
 map <c-p> "+gp
 
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
+
 set number
 set relativenumber
 set ignorecase

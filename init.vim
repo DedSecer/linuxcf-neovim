@@ -29,6 +29,7 @@ if dein#load_state(dein_path)
 	call dein#add('dracula/vim',{'name':'dracula'})
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('trevordmiller/nova-vim')
+	call dein#add('cocopon/iceberg.vim')
 
 	call dein#end()
 	call dein#save_state()
@@ -49,7 +50,11 @@ source ~/.config/nvim/plugged_scripts/indentline.vim
 "key map
 
 let mapleader=" "
+
 noremap r s
+unmap s
+
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 map Q :q<CR>
 noremap J 5j
@@ -57,10 +62,10 @@ noremap K 5k
 noremap H 5h
 noremap L 5l
 
-map <LEADER>h <C-w>h	
-map <LEADER>j <C-w>j	
-map <LEADER>k <C-w>k	
-map <LEADER>l <C-w>l
+noremap <LEADER>h <C-w>h	
+noremap <LEADER>j <C-w>j	
+noremap <LEADER>k <C-w>k	
+noremap <LEADER>l <C-w>l
 
 map <C-j>  :res +3<CR>
 map <C-k>  :res -3<CR>
@@ -72,17 +77,19 @@ map th :-tabnext<CR>
 map tl :+tabnext<CR>
 map sv <C-w>t<C-w>H
 map sh <C-w>t<C-w>K
-noremap sh H
-noremap sl L
+noremap sk H
+noremap sj L
 noremap sm M
 
-map - 0
-map = $
+noremap - 0
+noremap = $
 
 map U  :redo<CR>
 
-map <c-y> "+y
-map <c-p> "+gp
+noremap <c-y> "+y
+noremap <c-p> "+gp
+
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
@@ -99,7 +106,6 @@ set autoindent
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 
 "======Save History=====
@@ -110,11 +116,11 @@ if has("autocmd")
 
 
 "set the type of fishfile
-au BufRead,BufNewFile *.fish		setfiletype conf
+au BufRead,BufNewFile *.fish	setfiletype conf
 
 
 "==============
-noremap <C-r> :call RunFile()<CR>
+noremap <C-r> :call RunFile()<CR>i
 
 func! RunFile()	
 	

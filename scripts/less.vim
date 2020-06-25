@@ -1,39 +1,38 @@
 " Vim script to work like "less"
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last Change:	2017 Mar 31
-
 " Avoid loading this file twice, allow the user to define his own script.
-if exists("loaded_less")
-  finish
-endif
-let loaded_less = 1
+"if exists("loaded_less")
+"  finish
+"endif
+"let loaded_less = 1
 
 " If not reading from stdin, skip files that can't be read.
 " Exit if there is no file at all.
-if argc() > 0
-  let s:i = 0
-  while 1
-    if filereadable(argv(s:i))
-      if s:i != 0
-	sleep 3
-      endif
-      break
-    endif
-    if isdirectory(argv(s:i))
-      echomsg "Skipping directory " . argv(s:i)
-    elseif getftime(argv(s:i)) < 0
-      echomsg "Skipping non-existing file " . argv(s:i)
-    else
-      echomsg "Skipping unreadable file " . argv(s:i)
-    endif
-    echo "\n"
-    let s:i = s:i + 1
-    if s:i == argc()
-      quit
-    endif
-    next
-  endwhile
-endif
+"if argc() > 0
+"  let s:i = 0
+"  while 1
+"    if filereadable(argv(s:i))
+"      if s:i != 0
+"	sleep 3
+"      endif
+"      break
+"    endif
+"    if isdirectory(argv(s:i))
+"      echomsg "Skipping directory " . argv(s:i)
+"    elseif getftime(argv(s:i)) < 0
+"      echomsg "Skipping non-existing file " . argv(s:i)
+"    else
+"      echomsg "Skipping unreadable file " . argv(s:i)
+"    endif
+"    echo "\n"
+"    let s:i = s:i + 1
+"    if s:i == argc()
+"      quit
+"    endif
+"    next
+"  endwhile
+"endif
 
 "fun! s:Forward()
 "  " Searching forward
@@ -70,6 +69,7 @@ endif
 "  endif
 "endfun
 
+set ft=man
 fun! s:End()
   set ma
   if exists('s:lz')
@@ -158,34 +158,34 @@ fun! s:Help()
   let i = input("Hit Enter to continue")
 endfun
 
-set nocp
-syntax on
-set so=0
-set hlsearch
-set incsearch
-nohlsearch
-" Don't remember file names and positions
-set shada=
-set nows
-" Inhibit screen updates while searching
-let s:lz = &lz
-set lz
+"set nocp
+"syntax on
+"set so=0
+"set hlsearch
+"set incsearch
+"nohlsearch
+"" Don't remember file names and positions
+"set shada=
+"set nows
+"" Inhibit screen updates while searching
+"let s:lz = &lz
+"set lz
 
 
 " Used after each command: put cursor at end and display position
-if &wrap
-  noremap <SID>L L0:redraw<CR>:file<CR>
-  au VimEnter * normal! L0
-else
-  noremap <SID>L Lg0:redraw<CR>:file<CR>
-  au VimEnter * normal! Lg0
-endif
+"if &wrap
+"  noremap <SID>L L0:redraw<CR>:file<CR>
+"  au VimEnter * normal! L0
+"else
+"  noremap <SID>L Lg0:redraw<CR>:file<CR>
+"  au VimEnter * normal! Lg0
+"endif
 
 " When reading from stdin don't consider the file modified.
 au VimEnter * set nomod
 
 " Can't modify the text
-set noma
+"set noma
 
 " Give help
 noremap h :call <SID>Help()<CR>
@@ -197,28 +197,28 @@ noremap k <c-y>
 
 " If 'foldmethod' was changed keep the "z" commands, e.g. "zR" to open all
 " folds.
-if &foldmethod == "manual"
-  map z <Space>
-endif
+"if &foldmethod == "manual"
+"  map z <Space>
+"endif
 
-map <Esc><Space> <Space>
+"map <Esc><Space> <Space>
 " Re-read file and page forward "tail -f"
 "map F :e<CR>G<SID>L:sleep 1<CR>F
 
 
 " Redraw
-noremap <script> r <C-L><SID>L
-noremap <script> <C-R> <C-L><SID>L
-noremap <script> R <C-L><SID>L
+"noremap <script> r <C-L><SID>L
+"noremap <script> <C-R> <C-L><SID>L
+"noremap <script> R <C-L><SID>L
 
 " Start of file
 noremap <script> g gg<SID>L
 
 " End of file
-noremap <script> G G<SID>L
+"noremap <script> G G<SID>L
 
  "Go to percentage
-noremap <script> % %<SID>L
+"noremap <script> % %<SID>L
 map p %
 
 " Search
@@ -237,6 +237,6 @@ map p %
 noremap q :q<CR>
 
 " Switch to editing (switch off less mode)
-map v :silent call <SID>End()<CR>
+"map v :silent call <SID>End()<CR>
 
 " vim: sw=2

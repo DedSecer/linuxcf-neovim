@@ -1,52 +1,3 @@
-"====================
-"=     dein.vim     =
-"====================
-
-if &compatible
-  set nocompatible
-endif
-let dein_path="~/.config/nvim/dein"
-let g:dein#types#git#clone_depth=1
-set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state(dein_path)
-	call dein#begin(dein_path)
-	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
-	
-	call dein#add('neoclide/coc.nvim', {'rev':'release'})
-	call dein#add('mhinz/vim-startify')
-	call dein#add('haya14busa/dein-command.vim')	
-	call dein#add('honza/vim-snippets')
-	call dein#add('jiangmiao/auto-pairs')
-	call dein#add('mbbill/undotree')
-	call dein#add('liuchengxu/vista.vim')
-	call dein#add('vim-airline/vim-airline')
-	call dein#add('jaxbot/semantic-highlight.vim')
-	call dein#add('mhinz/vim-signify')
-	call dein#add('iamcco/markdown-preview.nvim',{'on_ft':['markdown','pandoc.markdown','rmd'],'build':'sh -c "cd app & yarn install"'})
-	call dein#add('Yggdroot/indentLine')
-	call dein#add('mg979/vim-visual-multi')
-	call dein#add('dracula/vim',{'name':'dracula'})
-	call dein#add('arcticicestudio/nord-vim')
-	call dein#add('trevordmiller/nova-vim')
-	call dein#add('cocopon/iceberg.vim')
-
-	call dein#end()
-	call dein#save_state()
-endif
-
-
-
-let g:term=expand('$TERM')
-
-
-source ~/.config/nvim/plugged_scripts/coc.vim
-source ~/.config/nvim/plugged_scripts/vista.vim
-source ~/.config/nvim/plugged_scripts/airline.vim
-source ~/.config/nvim/plugged_scripts/undotree.vim
-source ~/.config/nvim/plugged_scripts/dein.vim
-source ~/.config/nvim/plugged_scripts/indentline.vim
-
 "key map
 
 let mapleader=" "
@@ -54,7 +5,7 @@ let mapleader=" "
 noremap r s
 unmap s
 
-noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
+"noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 map Q :q<CR>
 noremap J 5j
@@ -107,9 +58,13 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 
 "======Save History=====
-if has("autocmd") 
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
-	endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
+if has('persistent_undo')
+	set undodir=$HOME/.local/tmp/nvim/undo
+	set undofile
+endif
+set backupdir=$HOME/.local/tmp/nvim/backup
+set directory=$HOME/.local/tmp/nvim/backup
 "=======================
 
 

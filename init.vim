@@ -13,6 +13,7 @@ if dein#load_state(dein_path)
 	call dein#begin(dein_path)
 	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
 	
+	call dein#add('Shougo/denite.nvim')
 	call dein#add('neoclide/coc.nvim', {'rev':'release'})
 	call dein#add('mhinz/vim-startify')
 	call dein#add('haya14busa/dein-command.vim')	
@@ -22,8 +23,7 @@ if dein#load_state(dein_path)
 	call dein#add('liuchengxu/vista.vim')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('jaxbot/semantic-highlight.vim')
-"	call dein#add('mhinz/vim-signify')
-"	call dein#add('airblade/vim-gitgutter')
+	call dein#add('airblade/vim-gitgutter')
 	call dein#add('tpope/vim-fugitive')
 	call dein#add('iamcco/markdown-preview.nvim',{'on_ft':['markdown','pandoc.markdown','rmd'],'build':'sh -c "cd app & yarn install"'})
 	call dein#add('Yggdroot/indentLine')
@@ -40,7 +40,9 @@ endif
 
 
 let g:term=expand('$TERM')
-
+"=================
+"=  Plug config  =
+"=================
 
 source ~/.config/nvim/plugged_scripts/coc.vim
 source ~/.config/nvim/plugged_scripts/vista.vim
@@ -49,14 +51,16 @@ source ~/.config/nvim/plugged_scripts/undotree.vim
 source ~/.config/nvim/plugged_scripts/dein.vim
 source ~/.config/nvim/plugged_scripts/indentline.vim
 
+"Autopairs
+let g:AutoPairsMapCh=0
+
+
 "key map
 
 let mapleader=" "
 
 noremap r s
 unmap s
-
-noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 map Q :q<CR>
 noremap J 5j
@@ -68,6 +72,11 @@ noremap <LEADER>h <C-w>h
 noremap <LEADER>j <C-w>j	
 noremap <LEADER>k <C-w>k	
 noremap <LEADER>l <C-w>l
+
+inoremap <c-j> <Down>
+inoremap <c-k> <Up>
+inoremap <c-h> <Left>
+inoremap <c-l> <Right>
 
 map <C-j>  :res +3<CR>
 map <C-k>  :res -3<CR>
@@ -90,6 +99,10 @@ map U  :redo<CR>
 
 noremap <c-y> "+y
 noremap <c-p> "+gp
+
+noremap <LEADER><CR> :nohlsearch<CR>
+
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 

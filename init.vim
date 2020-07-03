@@ -106,6 +106,8 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
+
 set number
 set relativenumber
 set ignorecase

@@ -40,7 +40,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 set updatetime=300
 set signcolumn=yes
 
-let g:coc_global_extensions = ['coc-python','coc-vimlsp','coc-html','coc-git','coc-json','coc-explorer','coc-snippets','coc-highlight']
+let g:coc_global_extensions = ['coc-python','coc-vimlsp','coc-html','coc-git','coc-json','coc-explorer','coc-snippets','coc-highlight','coc-yank']
 let g:markdown_fenced_languages = ['vim','help']
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
@@ -55,3 +55,6 @@ endfunction
 
 "coc-josn
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+"coc-yank
+command Yankhsty CocList -A --normal yank

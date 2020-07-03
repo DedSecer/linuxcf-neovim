@@ -4,5 +4,6 @@
       "${env:SPARK_HOME}/python",
       "${env:SPARK_HOME}/python/pyspark"
     ],
-	"suggest.noselect": false
+  "suggest.noselect": false,
+  "git.enableGutters": true
 }

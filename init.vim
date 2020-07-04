@@ -40,27 +40,15 @@ endif
 
 
 let g:term=expand('$TERM')
+
+
 "=================
-"=  Plug config  =
+"=    Key Map    =
 "=================
-
-source ~/.config/nvim/plugged_scripts/coc.vim
-source ~/.config/nvim/plugged_scripts/vista.vim
-source ~/.config/nvim/plugged_scripts/airline.vim
-source ~/.config/nvim/plugged_scripts/undotree.vim
-source ~/.config/nvim/plugged_scripts/dein.vim
-source ~/.config/nvim/plugged_scripts/indentline.vim
-
-"Autopairs
-let g:AutoPairsMapCh=0
-
-
-"key map
 
 let mapleader=" "
 
-noremap r s
-unmap s
+"noremap r s
 
 map Q :q<CR>
 noremap J 5j
@@ -86,11 +74,11 @@ map <C-l>  :vertical resize+3<CR>
 map tu :tabe 
 map th :-tabnext<CR>
 map tl :+tabnext<CR>
-map sv <C-w>t<C-w>H
-map sh <C-w>t<C-w>K
-noremap sk H
-noremap sj L
-noremap sm M
+map <leader>sv <C-w>t<C-w>H
+map <leader>sh <C-w>t<C-w>K
+noremap <LEADER>K H
+noremap <LEADER>J L
+noremap <LEADER>M M
 
 noremap - 0
 noremap = $
@@ -102,11 +90,34 @@ noremap <c-p> "+gp
 
 noremap <LEADER><CR> :nohlsearch<CR>
 
+
+
 noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
-noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
+"=================
+"=  Plug config  =
+"=================
+
+source ~/.config/nvim/plugged_scripts/coc.vim
+source ~/.config/nvim/plugged_scripts/vista.vim
+source ~/.config/nvim/plugged_scripts/airline.vim
+source ~/.config/nvim/plugged_scripts/undotree.vim
+source ~/.config/nvim/plugged_scripts/dein.vim
+source ~/.config/nvim/plugged_scripts/indentline.vim
+
+"Autopairs
+let g:AutoPairsMapCh=0
+
+"my script
+source ~/.config/nvim/scripts/runfile.vim
+
+
+
+"=================
+"=    setting    =
+"=================
 
 set number
 set relativenumber

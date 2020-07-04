@@ -96,6 +96,9 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
+"save file to /tmp and run it by default
+noremap <C-r> :call g:Runfile('tmp')<CR>i
+
 "=================
 "=  Plug config  =
 "=================
@@ -144,27 +147,3 @@ if has("autocmd")
 "set the type of fishfile
 au BufRead,BufNewFile *.fish	setfiletype conf
 
-
-"==============
-noremap <C-r> :call RunFile()<CR>i
-
-func! RunFile()	
-	
-	"get the extension of file
-	let $ext=expand('%:e')
-	let $filen=expand('%:p')	
-	exec "w"
-	set splitbelow
-	sp
-
-	if $ext == 'py'
-		term python -i $filen
-	elseif $ext == 'sh'
-		term bash -c $filen 
-	elseif $ext  == 'fish'
-		term fish $filen
-	endif
-	
-	:res -5<CR>
-endfunc
-"=============

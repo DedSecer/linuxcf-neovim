@@ -14,7 +14,7 @@ if dein#load_state(dein_path)
 	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
 	
 	call dein#add('Shougo/denite.nvim')
-	call dein#add('neoclide/coc.nvim', {'rev':'release'})
+	call dein#add('neoclide/coc.nvim', {'rev':'release','merged':0})
 	call dein#add('mhinz/vim-startify')
 	call dein#add('haya14busa/dein-command.vim')	
 	call dein#add('honza/vim-snippets')

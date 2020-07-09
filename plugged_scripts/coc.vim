@@ -27,10 +27,10 @@ function! s:check_back_space() abort
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? "\<Down>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<Up>" : "\<C-h>"
 
 	
 

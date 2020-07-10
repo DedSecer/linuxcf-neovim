@@ -43,7 +43,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 set updatetime=300
 set signcolumn=yes
 
-let g:coc_global_extensions = ['coc-python','coc-vimlsp','coc-html','coc-git','coc-json','coc-explorer','coc-snippets','coc-highlight','coc-yank','coc-clangd']
+let g:coc_global_extensions = ['coc-python','coc-vimlsp','coc-html','coc-tsserver','coc-css','coc-git','coc-json','coc-explorer','coc-snippets','coc-highlight','coc-yank','coc-clangd']
 let g:markdown_fenced_languages = ['vim','help']
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 

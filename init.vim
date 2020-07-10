@@ -66,6 +66,11 @@ inoremap <c-k> <Up>
 inoremap <c-h> <Left>
 inoremap <c-l> <Right>
 
+cnoremap <c-j> <Down>
+cnoremap <c-k> <Up>
+cnoremap <c-h> <Left>
+cnoremap <c-l> <Right>
+
 map <C-j>  :res +3<CR>
 map <C-k>  :res -3<CR>
 map <C-h>  :vertical resize-3<CR>
@@ -135,7 +140,7 @@ set autoindent
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-
+let g:clipboard='xclip'
 
 "======Save History=====
 if has("autocmd") 

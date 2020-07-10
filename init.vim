@@ -19,6 +19,7 @@ if dein#load_state(dein_path)
 	call dein#add('haya14busa/dein-command.vim')	
 	call dein#add('honza/vim-snippets')
 	call dein#add('jiangmiao/auto-pairs')
+	call dein#add('chiel92/vim-autoformat')
 	call dein#add('mbbill/undotree')
 	call dein#add('liuchengxu/vista.vim')
 	call dein#add('vim-airline/vim-airline')
@@ -88,6 +89,8 @@ noremap <LEADER>M M
 noremap - 0
 noremap = $
 
+noremap <LEADER>= =
+
 map U  :redo<CR>
 
 noremap <c-y> "+y
@@ -102,7 +105,7 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 "save file to /tmp and run it by default
-noremap <C-r> :call g:Runfile('tmp')<CR>i
+noremap <C-r> :call g:Runfile('tmp')<CR>
 
 "=================
 "=  Plug config  =
@@ -141,7 +144,7 @@ set autoindent
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 let g:clipboard='xclip'
-
+let g:python3_host_prog='/bin/python3'
 "======Save History=====
 if has("autocmd") 
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 

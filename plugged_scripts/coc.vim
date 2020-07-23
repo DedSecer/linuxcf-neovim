@@ -38,7 +38,7 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<Up>" : "\<C-h>"
 vmap <C-j> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
-imap <leader>j <Plug>(coc-snippets-expand-jump)
+imap <C-g> <Plug>(coc-snippets-expand-jump)
 
 set updatetime=300
 set signcolumn=yes

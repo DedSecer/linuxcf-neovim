@@ -1,0 +1,2 @@
+#heavy plugin to replace:
+airline startify

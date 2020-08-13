@@ -13,20 +13,20 @@ if dein#load_state(dein_path)
 	call dein#begin(dein_path)
 	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
 	
-	call dein#add('neoclide/coc.nvim', {'rev':'release','merged':0})
+	call dein#add('neoclide/coc.nvim', {'rev':'release','merged':0, 'on_cmd': 'Coc'})
 	call dein#add('mhinz/vim-startify')
 	call dein#add('haya14busa/dein-command.vim')	
 	call dein#add('honza/vim-snippets')
 	call dein#add('jiangmiao/auto-pairs')
-	call dein#add('chiel92/vim-autoformat')
-	call dein#add('mbbill/undotree')
-	call dein#add('liuchengxu/vista.vim')
+	call dein#add('chiel92/vim-autoformat', {'on_cmd': 'Autoformat'})
+	call dein#add('mbbill/undotree', {'on_cmd': 'Undotree'})
+	call dein#add('liuchengxu/vista.vim', {'on_cmd': 'Vista', 'hook_post_source': 'source ~/.config/nvim/plugged_scripts/vista.vim'})
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('jaxbot/semantic-highlight.vim')
 	call dein#add('mhinz/vim-signify')
 	call dein#add('iamcco/markdown-preview.nvim',{'on_ft':['markdown','pandoc.markdown','rmd'],'build':'sh -c "cd app & yarn install"'})
 	call dein#add('Yggdroot/indentLine')
-	call dein#add('mg979/vim-visual-multi')
+	call dein#add('mg979/vim-visual-multi',{'on_cmd': 'VisualMulti'})
 	call dein#add('dracula/vim',{'name':'dracula'})
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('trevordmiller/nova-vim')
@@ -110,7 +110,6 @@ noremap <C-r> :call g:Runfile('tmp')<CR>
 "=================
 
 source ~/.config/nvim/plugged_scripts/coc.vim
-source ~/.config/nvim/plugged_scripts/vista.vim
 source ~/.config/nvim/plugged_scripts/airline.vim
 source ~/.config/nvim/plugged_scripts/undotree.vim
 source ~/.config/nvim/plugged_scripts/dein.vim

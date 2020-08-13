@@ -1,9 +1,9 @@
 "Plugged 'Vista' Config
-function! NearestMethodOrFunction() abort
-	return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
+"function! NearestMethodOrFunction() abort
+"	return get(b:, 'vista_nearest_method_or_function', '')
+"endfunction
 
-set statusline+=%{NearestMethodOrFunction()}
+"set statusline+=%{NearestMethodOrFunction()}
 
 map <c-f> :Vista!!<CR>
 
@@ -11,7 +11,7 @@ map <c-f> :Vista!!<CR>
 "
 " If you want to show the nearest function in your statusline automatically,
 " you can add the following line to your vimrc 
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+"autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista#renderer#icons = {

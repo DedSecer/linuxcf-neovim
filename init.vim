@@ -17,7 +17,7 @@ if dein#load_state(dein_path)
     
     call dein#add('haya14busa/dein-command.vim')    
     call dein#add('hardcoreplayers/dashboard-nvim',
-                \{'hook_add':'autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2'})
+                \{'hook_add': 'source ~/.config/nvim/plugged_scripts/dashboard.vim'})
 
     call dein#add('neoclide/coc.nvim', 
                 \{'rev': 'release',
@@ -75,7 +75,7 @@ endif
 "=    Key Map    =
 "=================
 
-let mapleader=" "
+let g:mapleader=" "
 
 "noremap r s
 

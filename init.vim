@@ -6,39 +6,69 @@ if &compatible
   set nocompatible
 endif
 let dein_path="~/.config/nvim/dein"
+let g:dein#install_log_filename="~/.local/share/log/dein"
+
 let g:dein#types#git#clone_depth=1
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state(dein_path)
-	call dein#begin(dein_path)
-	call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
-	
-	call dein#add('neoclide/coc.nvim', {'rev':'release','merged':0, 'on_cmd': 'Coc'})
-	call dein#add('mhinz/vim-startify')
-	call dein#add('haya14busa/dein-command.vim')	
-	call dein#add('honza/vim-snippets')
-	call dein#add('jiangmiao/auto-pairs')
-	call dein#add('chiel92/vim-autoformat', {'on_cmd': 'Autoformat'})
-	call dein#add('mbbill/undotree', {'on_cmd': 'Undotree'})
-	call dein#add('liuchengxu/vista.vim', {'on_cmd': 'Vista', 'hook_post_source': 'source ~/.config/nvim/plugged_scripts/vista.vim'})
-	call dein#add('vim-airline/vim-airline')
-	call dein#add('jaxbot/semantic-highlight.vim')
-	call dein#add('mhinz/vim-signify')
-	call dein#add('iamcco/markdown-preview.nvim',{'on_ft':['markdown','pandoc.markdown','rmd'],'build':'sh -c "cd app & yarn install"'})
-	call dein#add('Yggdroot/indentLine')
-	call dein#add('mg979/vim-visual-multi',{'on_cmd': 'VisualMulti'})
-	call dein#add('dracula/vim',{'name':'dracula'})
-	call dein#add('arcticicestudio/nord-vim')
-	call dein#add('trevordmiller/nova-vim')
-	call dein#add('cocopon/iceberg.vim')
+    call dein#begin(dein_path)
+    call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
+    
+    call dein#add('haya14busa/dein-command.vim')    
+    call dein#add('hardcoreplayers/dashboard-nvim',
+                \{'hook_add':'autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2'})
 
-	call dein#end()
-	call dein#save_state()
+    call dein#add('neoclide/coc.nvim', 
+                \{'rev': 'release',
+                \ 'merged': 0,
+                \ 'on_cmd': 'Coc',
+                \ 'hook_add': 'source ~/.config/nvim/plugged_scripts/coc-added-hook.vim',
+                \ 'hook_post_source':'source ~/.config/nvim/plugged_scripts/coc.vim'})
+
+
+    call dein#add('honza/vim-snippets')
+    call dein#add('chiel92/vim-autoformat', {'on_cmd': 'Autoformat'})
+
+    call dein#add('mbbill/undotree', 
+                \{'on_cmd': 'Undotree',
+                \ 'hook_add': 'map <c-u> :UndotreeToggle<CR>',
+                \ 'hook_post_source': 'source ~/.config/nvim/plugged_scripts/undotree.vim'})
+
+    call dein#add('mg979/vim-visual-multi',{'on_cmd': 'VisualMulti'})
+
+    call dein#add('liuchengxu/vim-clap',{'on_cmd': 'Clap'})
+
+    call dein#add('liuchengxu/vista.vim', 
+                \{'on_cmd': 'Vista', 
+                \ 'hook_add':'map <c-f> :Vista!!<CR>', 
+                \ 'hook_post_source': 'source ~/.config/nvim/plugged_scripts/vista.vim'})
+
+    call dein#add('vim-airline/vim-airline',
+                \{'on_cmd':'Airline',
+                \'hook_add': 'source ~/.config/nvim/plugged_scripts/airline-added-hook.vim'})
+
+    call dein#add('jaxbot/semantic-highlight.vim',{'on_cmd':'SemanticHighlight'})
+    call dein#add('Yggdroot/indentLine',
+                \{'on_cmd': 'IndentLines',
+                \ 'hook_add':'source ~/.config/nvim/plugged_scripts/indentline.vim'})
+
+    call dein#add('mhinz/vim-signify',{'on_cmd':'Signify'})
+
+    call dein#add('iamcco/markdown-preview.nvim',
+                \{'on_ft':['markdown','pandoc.markdown','rmd'],
+                \ 'build':'sh -c "cd app & yarn install"'})
+
+    "colorscheme
+    call dein#add('dracula/vim',{'name':'dracula'})
+    call dein#add('arcticicestudio/nord-vim')
+    call dein#add('trevordmiller/nova-vim')
+    call dein#add('cocopon/iceberg.vim')
+    
+    call dein#end()
+    call dein#save_state()
 endif
 
-
-
-let g:term=expand('$TERM')
 
 
 "=================
@@ -55,9 +85,9 @@ noremap K 5k
 noremap H 5h
 noremap L 5l
 
-noremap <LEADER>h <C-w>h	
-noremap <LEADER>j <C-w>j	
-noremap <LEADER>k <C-w>k	
+noremap <LEADER>h <C-w>h    
+noremap <LEADER>j <C-w>j    
+noremap <LEADER>k <C-w>k    
 noremap <LEADER>l <C-w>l
 
 inoremap <c-j> <Down>
@@ -97,7 +127,6 @@ noremap <c-p> "+gp
 noremap <LEADER><CR> :nohlsearch<CR>
 
 
-
 noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
@@ -105,18 +134,6 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 "save file to /tmp and run it by default
 noremap <C-r> :call g:Runfile('tmp')<CR>
 
-"=================
-"=  Plug config  =
-"=================
-
-source ~/.config/nvim/plugged_scripts/coc.vim
-source ~/.config/nvim/plugged_scripts/airline.vim
-source ~/.config/nvim/plugged_scripts/undotree.vim
-source ~/.config/nvim/plugged_scripts/dein.vim
-source ~/.config/nvim/plugged_scripts/indentline.vim
-
-"Autopairs
-let g:AutoPairsMapCh=0
 
 "my script
 source ~/.config/nvim/scripts/runfile.vim
@@ -127,28 +144,29 @@ source ~/.config/nvim/scripts/runfile.vim
 "=    setting    =
 "=================
 
-set number
 set relativenumber
-set ignorecase
 set smartcase
 set scrolloff=4
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set autoindent
+set tabstop=4
+set expandtab
+set smartindent
+set backupdir=~/.local/tmp/nvim/backup
+set directory=~/.local/tmp/nvim/backup
 
-autocmd FileType json syntax match Comment +\/\/.\+$+
+"autocmd FileType json syntax match Comment +\/\/.\+$+
 
-let g:clipboard='xclip'
 let g:python3_host_prog='/bin/python3'
-"======Save History=====
-if has("autocmd") 
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
-	endif
-"=======================
 
+"Save History
+set undodir=~/.local/tmp/nvim/undo
+set undofile
+
+"Save Cursor History
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
 
 "set the type of fishfile
-au BufRead,BufNewFile *.fish	setfiletype conf
-
+au BufRead,BufNewFile *.fish    setfiletype conf

@@ -114,8 +114,6 @@ noremap <LEADER>M M
 noremap - 0
 noremap = $
 
-noremap <LEADER>= =
-
 map U  :redo<CR>
 
 noremap <c-y> "+y
@@ -128,10 +126,8 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
 
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
-"save file to /tmp and run it by default
-noremap <C-r> :call g:Runfile('tmp')<CR>
 "save file  and run it 
-noremap <C-r> :call g:Runfile()<CR>
+noremap <c-r> :call g:Runfile()<CR>
 
 
 "my script
@@ -143,7 +139,9 @@ source ~/.config/nvim/scripts/runfile.vim
 "=    setting    =
 "=================
 
+set number
 set relativenumber
+set ignorecase
 set smartcase
 set scrolloff=4
 set noexpandtab
@@ -156,7 +154,7 @@ set smartindent
 set backupdir=~/.local/tmp/nvim/backup
 set directory=~/.local/tmp/nvim/backup
 
-"autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 let g:python3_host_prog='/bin/python3'
 

@@ -2,6 +2,8 @@
 "=     dein.vim     =
 "====================
 
+let g:mapleader=" "
+
 if &compatible
   set nocompatible
 endif
@@ -24,7 +26,7 @@ if dein#load_state(dein_path)
                 \ 'merged': 0,
                 \ 'on_cmd': 'Coc',
                 \ 'hook_add': 'source ~/.config/nvim/plugged_scripts/coc-added-hook.vim',
-                \ 'hook_post_source':'source ~/.config/nvim/plugged_scripts/coc.vim'})
+                \ 'hook_source':'source ~/.config/nvim/plugged_scripts/coc.vim'})
 
 
     call dein#add('honza/vim-snippets')
@@ -32,8 +34,7 @@ if dein#load_state(dein_path)
 
     call dein#add('mbbill/undotree', 
                 \{'on_cmd': 'Undotree',
-                \ 'hook_add': 'map <c-u> :UndotreeToggle<CR>',
-                \ 'hook_post_source': 'source ~/.config/nvim/plugged_scripts/undotree.vim'})
+                \ 'hook_add': 'map <c-u> :UndotreeToggle<CR>'})
 
     call dein#add('mg979/vim-visual-multi',{'on_cmd': 'VisualMulti'})
 
@@ -42,7 +43,7 @@ if dein#load_state(dein_path)
     call dein#add('liuchengxu/vista.vim', 
                 \{'on_cmd': 'Vista', 
                 \ 'hook_add':'map <c-f> :Vista!!<CR>', 
-                \ 'hook_post_source': 'source ~/.config/nvim/plugged_scripts/vista.vim'})
+                \ 'hook_source': 'source ~/.config/nvim/plugged_scripts/vista.vim'})
 
     call dein#add('vim-airline/vim-airline',
                 \{'on_cmd':'Airline',
@@ -70,12 +71,9 @@ if dein#load_state(dein_path)
 endif
 
 
-
 "=================
 "=    Key Map    =
 "=================
-
-let g:mapleader=" "
 
 "noremap r s
 

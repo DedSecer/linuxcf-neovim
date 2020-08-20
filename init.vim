@@ -30,7 +30,6 @@ if dein#load_state(dein_path)
 
 
     call dein#add('honza/vim-snippets')
-    call dein#add('chiel92/vim-autoformat', {'on_cmd': 'Autoformat'})
 
     call dein#add('mbbill/undotree', 
                 \{'on_cmd': 'Undotree',

@@ -1,55 +1,30 @@
-
-com RunfileClean !rm /tmp/NvimRunfile*
-com -nargs=1 -complete=custom,ReturnRunfileOption Runfile call Runfile(<q-args>)
-
-
-func! ReturnRunfileOption(A,L,P)
-	return "current\ntmp"
-endfun
-
-func! SaveToTmpf()
-	let ext=expand('%:e')
-	let filen=expand('%:p')	
-	
-	if ext == 'c'
-		let tmpfilen=system("echo -n '/tmp/NvimRunfile-' ; date +%H:%M:%S.out")
-		exec '!gcc % -o ' . tmpfilen
-	else
-		let tmpfilen=system("echo -n '/tmp/'NvimRunfile- ; date +%H:%M:%S.".ext)
-		exec 'w ' . tmpfilen
-	endif
-	
-	call system('chmod +x '.tmpfilen)
-	return tmpfilen
-endfunc
-
-
 func! g:Runfile(method)	
-
-	if a:method == 'tmp'
-		let filen=SaveToTmpf()
-	elseif a:method == 'current'
-		let filen=expand('%')
-		w
-	endif
-	
+    w
+    let filen=expand('%:p')
 	let ext=expand('%:e')
 	
 	set splitbelow
-	sp
 
 	if ext  == 'c'
-		exec 'term '. filen
-	
+        let outname=expand('%:h') . '/' . expand('%:r') . '.out'
+		exec '!gcc '. filen . ' -o ' . outname
+        if !v:shell_error
+            exec 'term time ' . outname
+            sp
+        "else "quit the spilt windows if fail
+        "    :q
+        endif
+
 	elseif ext == 'py'
+        sp
 		exec 'term python -i ' . filen
 	
 	elseif ext == 'sh'
 		let cmd='sh ' . filen
+        sp
 		exec 'term ' . cmd
 
 	endif
 	
 	:res -5<CR>
 endfunc
-

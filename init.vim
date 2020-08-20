@@ -130,6 +130,8 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 "save file to /tmp and run it by default
 noremap <C-r> :call g:Runfile('tmp')<CR>
+"save file  and run it 
+noremap <C-r> :call g:Runfile()<CR>
 
 
 "my script

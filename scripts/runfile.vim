@@ -12,7 +12,7 @@ func! g:Runfile()
             :q
         endif
 
-	elseif &filetype == 'py'
+	elseif &filetype == 'python'
 		exec 'term python %'	
 
 	elseif &filetype == 'sh'

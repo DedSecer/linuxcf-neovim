@@ -1,10 +1,9 @@
 {
-    "python.jediEnabled": false,
     "python.autoComplete.extraPaths": [
-        "${env:SPARK_HOME}/python",
-        "${env:SPARK_HOME}/python/pyspark"
+      "${env:SPARK_HOME}/python",
+      "${env:SPARK_HOME}/python/pyspark"
     ],
     "suggest.noselect": false,
-    "git.enableGutters": true,
+    "git.enableGutters": false,
     "suggest.enablePreview": true
 }

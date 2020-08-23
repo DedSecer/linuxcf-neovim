@@ -1,7 +1,7 @@
 "Plugged 'COC' config
 
 "extesion list
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-git', 'coc-json', 'coc-explorer', 'coc-snippets', 'coc-highlight', 'coc-yank', 'coc-clangd', 'coc-pairs', 'coc-fish', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-vimlsp', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-git', 'coc-json', 'coc-explorer', 'coc-snippets', 'coc-highlight', 'coc-yank', 'coc-clangd', 'coc-pairs', 'coc-fish', 'coc-pyright']
 
 function! s:check_back_space() abort
   let col = col('.') - 1

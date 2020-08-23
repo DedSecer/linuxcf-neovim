@@ -37,7 +37,7 @@ if dein#load_state(dein_path)
 
     call dein#add('mg979/vim-visual-multi',{'on_cmd': 'VisualMulti'})
 
-    call dein#add('liuchengxu/vim-clap',{'on_cmd': 'Clap'})
+    call dein#add('liuchengxu/vim-clap',{'on_cmd': 'Clap', 'hook_add': 'map <c-c> :Clap command<CR>'})
 
     call dein#add('liuchengxu/vista.vim', 
                 \{'on_cmd': 'Vista', 

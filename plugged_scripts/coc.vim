@@ -47,7 +47,10 @@ set signcolumn=yes
 
 let g:markdown_fenced_languages = ['vim', 'help']
 
-command! HlCsHold autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup Coc
+
+command! HlCsHold autocmd Coc CursorHold * silent call CocActionAsync('highlight')
+command! NoHlCsHold autocmd! Coc 
 
 "coc-yank
 command! Yankhsty CocList -A --normal yank
@@ -74,6 +77,7 @@ call coc#add_command('jumpReferences', 'JumpReferences', 'Jump to references pos
 call coc#add_command('yankFromHistory', 'Yankhsty', 'browser your clipboard history')
 
 call coc#add_command('highlightCursorHold', 'HlCsHold', 'Highlight the word with cursor hold')
+call coc#add_command('noHighlightCursorHold', 'NoHlCsHold', 'disable Highlight the word with cursor hold')
 
 
 

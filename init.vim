@@ -54,6 +54,7 @@ if dein#load_state(dein_path)
                 \ 'hook_add':'source ~/.config/nvim/plugged_scripts/indentline.vim'})
 
     call dein#add('mhinz/vim-signify',{'on_cmd':'Signify'})
+    call dein#add('lambdalisue/suda.vim',{'hook_source':'command W w suda://%', 'on_cmd':'W'})
 
     call dein#add('iamcco/markdown-preview.nvim',
                 \{'on_ft':['markdown','pandoc.markdown','rmd'],

@@ -1,6 +1,7 @@
 "Plugged 'COC' hook
 
-map <c-e> :CocList explPresets<CR>
+map <c-e> ::CocCommand explorer<CR>
+map <c-e><c-e> :CocList explPresets<CR>
 "map <c-c> :CocCommand<CR>
 let g:coc_explorer_global_presets = {
 \   'normal': {

@@ -1,9 +1,4 @@
 {
-    "python.autoComplete.extraPaths": [
-      "${env:SPARK_HOME}/python",
-      "${env:SPARK_HOME}/python/pyspark"
-    ],
-    "suggest.noselect": false,
-    "git.enableGutters": false,
-    "suggest.enablePreview": true
+    "suggest.enablePreview": true,
+    "git.enableGutters": false
 }

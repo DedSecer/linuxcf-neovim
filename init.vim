@@ -152,8 +152,16 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 set smartindent
+set hidden
 set backupdir=~/.local/tmp/nvim/backup
 set directory=~/.local/tmp/nvim/backup
+function Oneline()    
+    noremap <c-j> gj
+    noremap <c-k> gk
+    unmap <c-h>
+    unmap <c-l>
+endfunction
+
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 

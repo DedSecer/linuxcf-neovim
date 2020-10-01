@@ -1,7 +1,7 @@
 "Plugged 'COC' config
 
 "extesion list
-let g:coc_global_extensions = ['coc-vimlsp', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-git', 'coc-json', 'coc-explorer', 'coc-snippets', 'coc-highlight', 'coc-yank', 'coc-clangd', 'coc-pairs', 'coc-fish', 'coc-pyright']
+let g:coc_global_extensions = ['coc-vimlsp', 'coc-html', 'coc-tsserver', 'coc-css', 'coc-json', 'coc-explorer', 'coc-snippets', 'coc-highlight', 'coc-yank', 'coc-clangd', 'coc-pairs', 'coc-fish', 'coc-pyright']
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -47,10 +47,20 @@ set signcolumn=yes
 
 let g:markdown_fenced_languages = ['vim', 'help']
 
-augroup Coc
+augroup CocHighightText
 
-command! HlCsHold autocmd Coc CursorHold * silent call CocActionAsync('highlight')
-command! NoHlCsHold autocmd! Coc 
+command! HlCsHold call HlcsHold() 
+command! NoHlCsHold call NoHlcsHold()
+
+func! HlcsHold()
+    hi default link CocHighightText CursorColumn
+    autocmd CocHighightText CursorHold * silent call CocActionAsync('highlight')
+endfun 
+
+func! NoHlcsHold()
+    hi default link CocHighightText None
+    autocmd! CocHighightText
+endfun 
 
 "coc-yank
 command! Yankhsty CocList -A --normal yank

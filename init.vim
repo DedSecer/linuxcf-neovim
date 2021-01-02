@@ -83,6 +83,9 @@ noremap K 5k
 noremap H 5h
 noremap L 5l
 
+noremap + 5<c-e>
+noremap _ 5<c-y>
+
 noremap <LEADER>h <C-w>h    
 noremap <LEADER>j <C-w>j    
 noremap <LEADER>k <C-w>k    

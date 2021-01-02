@@ -28,6 +28,8 @@ func! g:Runfile()
         else "quit the spilt windows if fail
             :q
         endif
+    elseif &filetype == 'make'
+        exec 'term make'
 
     endif
     

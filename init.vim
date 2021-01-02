@@ -16,8 +16,8 @@ set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state(dein_path)
     call dein#begin(dein_path)
     call dein#add(dein_path.'/repos/github.com/Shougo/dein.vim')
-    
     call dein#add('haya14busa/dein-command.vim')    
+
     call dein#add('hardcoreplayers/dashboard-nvim',
                 \{'hook_add': 'source ~/.config/nvim/plugged_scripts/dashboard.vim'})
 
@@ -53,12 +53,15 @@ if dein#load_state(dein_path)
                 \{'on_cmd': 'IndentLines',
                 \ 'hook_add':'source ~/.config/nvim/plugged_scripts/indentline.vim'})
 
-    call dein#add('mhinz/vim-signify',{'on_cmd':'Signify'})
     call dein#add('lambdalisue/suda.vim',{'hook_source':'command W w suda://%', 'on_cmd':'W'})
 
     call dein#add('iamcco/markdown-preview.nvim',
                 \{'on_ft':['markdown','pandoc.markdown','rmd'],
                 \ 'build':'sh -c "cd app & yarn install"'})
+
+    call dein#add('tpope/vim-surround',{'on_cmd':'Surround'})
+    call dein#add('gcmt/wildfire.vim',{'on_cmd':'Wildfire'})
+
 
     "colorscheme
     call dein#add('dracula/vim',{'name':'dracula'})

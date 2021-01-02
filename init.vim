@@ -169,7 +169,7 @@ function Oneline()
 endfunction
 
 
-autocmd FileType json syntax match Comment +\/\/.\+$+
+"autocmd FileType json syntax match Comment +\/\/.\+$+
 
 let g:python3_host_prog='/bin/python3'
 

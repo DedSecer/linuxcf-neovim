@@ -31,9 +31,9 @@ if dein#load_state(dein_path)
 
     call dein#add('honza/vim-snippets')
 
-    call dein#add('mbbill/undotree', 
-                \{'on_cmd': 'Undotree',
-                \ 'hook_add': 'map <c-u> :UndotreeToggle<CR>'})
+    call dein#add('simnalamburt/vim-mundo',
+                \{'on_cmd': 'Mundo',
+                \ 'hook_add': 'map <c-u> :MundoToggle<CR>'})
 
     call dein#add('mg979/vim-visual-multi',{'on_cmd': 'VisualMulti'})
 

@@ -1,5 +1,6 @@
 "disable tabline
-autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
+autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2 
+autocmd FileType dashboard set laststatus=0 | autocmd WinLeave <buffer> set laststatus=2 
 
 let g:mapleader="\<Space>"
 nmap <Leader>s :<C-u>SessionLoad<CR>

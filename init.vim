@@ -181,4 +181,4 @@ set undofile
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
 
 "set the type of fishfile
-au BufRead,BufNewFile *.fish    setfiletype conf
+au BufRead,BufNewFile *.fish    setfiletype fish | set syntax=conf

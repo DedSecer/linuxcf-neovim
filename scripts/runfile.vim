@@ -18,6 +18,9 @@ func! g:Runfile()
     elseif &filetype == 'sh'
         exec 'term sh %'
 
+    elseif &filetype == 'fish'
+        exec 'term fish %'
+
     elseif &filetype == 'javascript'
         exec "term time node %<.js"
 

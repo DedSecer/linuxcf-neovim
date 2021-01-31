@@ -66,6 +66,8 @@ if dein#load_state(dein_path)
     "colorscheme
     call dein#add('dracula/vim',{'name':'dracula'})
     call dein#add('arcticicestudio/nord-vim')
+    call dein#add('ajmwagar/vim-deus')
+    call dein#add('sainnhe/forest-night')
     call dein#add('trevordmiller/nova-vim')
     call dein#add('cocopon/iceberg.vim')
     

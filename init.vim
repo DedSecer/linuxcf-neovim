@@ -19,14 +19,14 @@ if dein#load_state(dein_path)
     call dein#add('haya14busa/dein-command.vim')    
 
     call dein#add('hardcoreplayers/dashboard-nvim',
-                \{'hook_add': 'source ~/.config/nvim/plugged_scripts/dashboard.vim'})
+                \{'hook_add': 'source ~/.config/nvim/plugged_scripts/dashboard-add.vim'})
 
     call dein#add('neoclide/coc.nvim', 
                 \{'rev': 'release',
                 \ 'merged': 0,
                 \ 'on_cmd': 'Coc',
-                \ 'hook_add': 'source ~/.config/nvim/plugged_scripts/coc-added-hook.vim',
-                \ 'hook_source':'source ~/.config/nvim/plugged_scripts/coc.vim'})
+                \ 'hook_add': 'source ~/.config/nvim/plugged_scripts/coc-add.vim',
+                \ 'hook_source':'source ~/.config/nvim/plugged_scripts/coc-source.vim'})
 
 
     call dein#add('honza/vim-snippets')
@@ -42,16 +42,16 @@ if dein#load_state(dein_path)
     call dein#add('liuchengxu/vista.vim', 
                 \{'on_cmd': 'Vista', 
                 \ 'hook_add':'map <c-f> :Vista!!<CR>', 
-                \ 'hook_source': 'source ~/.config/nvim/plugged_scripts/vista.vim'})
+                \ 'hook_source': 'source ~/.config/nvim/plugged_scripts/vista-source.vim'})
 
     call dein#add('vim-airline/vim-airline',
                 \{'on_cmd':'Airline',
-                \'hook_add': 'source ~/.config/nvim/plugged_scripts/airline-added-hook.vim'})
+                \'hook_add': 'source ~/.config/nvim/plugged_scripts/airline-add.vim'})
 
     call dein#add('jaxbot/semantic-highlight.vim',{'on_cmd':'SemanticHighlight'})
     call dein#add('Yggdroot/indentLine',
                 \{'on_cmd': 'IndentLines',
-                \ 'hook_add':'source ~/.config/nvim/plugged_scripts/indentline.vim'})
+                \ 'hook_add':'source ~/.config/nvim/plugged_scripts/indentline-add.vim'})
 
     call dein#add('lambdalisue/suda.vim',{'hook_source':'command W w suda://%', 'on_cmd':'W'})
 
@@ -172,8 +172,6 @@ endfunction
 
 
 "autocmd FileType json syntax match Comment +\/\/.\+$+
-
-let g:python3_host_prog='/bin/python3'
 
 "Save History
 set undodir=~/.local/tmp/nvim/undo

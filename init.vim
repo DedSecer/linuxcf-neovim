@@ -2,8 +2,7 @@
 "=    Key Map    =
 "=================
 
-let mapleader=" "
-
+let g:mapleader=" "
 
 map Q :q<CR>
 noremap J 5j
@@ -11,15 +10,23 @@ noremap K 5k
 noremap H 5h
 noremap L 5l
 
-noremap <LEADER>h <C-w>h	
-noremap <LEADER>j <C-w>j	
-noremap <LEADER>k <C-w>k	
+noremap + 5<c-e>
+noremap _ 5<c-y>
+
+noremap <LEADER>h <C-w>h    
+noremap <LEADER>j <C-w>j    
+noremap <LEADER>k <C-w>k    
 noremap <LEADER>l <C-w>l
 
 inoremap <c-j> <Down>
 inoremap <c-k> <Up>
 inoremap <c-h> <Left>
 inoremap <c-l> <Right>
+
+cnoremap <c-j> <Down>
+cnoremap <c-k> <Up>
+cnoremap <c-h> <Left>
+cnoremap <c-l> <Right>
 
 map <C-j>  :res +3<CR>
 map <C-k>  :res -3<CR>
@@ -45,10 +52,25 @@ noremap <c-p> "+gp
 
 noremap <LEADER><CR> :nohlsearch<CR>
 
+
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>i
+
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
-"save file to /tmp and run it by default
-noremap <C-r> :call g:Runfile('tmp')<CR>i
+"save file  and run it 
+noremap <c-r> :call g:Runfile()<CR>
+
+"my script
+source ~/.config/nvim/scripts/runfile.vim
+
+function Oneline()    
+    noremap <c-j> gj
+    noremap <c-k> gk
+    unmap <c-h>
+    unmap <c-l>
+endfunction
+
+
 
 "=================
 "=    setting    =
@@ -63,21 +85,20 @@ set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set autoindent
+set tabstop=4
+set expandtab
+set smartindent
+set hidden
+set backupdir=~/.local/tmp/nvim/backup
+set directory=~/.local/tmp/nvim/backup
+
+
+"Save History
+set undodir=~/.local/tmp/nvim/undo
+set undofile
+
+"Save Cursor History
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
 
 "set the type of fishfile
-au BufRead,BufNewFile *.fish	setfiletype conf
-
-"===================
-"=   Save History  =
-"===================
-
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
-if has('persistent_undo')
-	set undodir=$HOME/.local/tmp/nvim/undo
-	set undofile
-endif
-set backupdir=$HOME/.local/tmp/nvim/backup
-set directory=$HOME/.local/tmp/nvim/backup
-
-
+au BufRead,BufNewFile *.fish    setfiletype fish | set syntax=conf

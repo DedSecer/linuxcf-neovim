@@ -1,7 +1,7 @@
 "Plugged 'COC' config
 
 "extesion list
-let g:coc_global_extensions = ["coc-actions", "coc-vimlsp", "coc-html", "coc-tsserver", "coc-css", "coc-json", "coc-explorer", "coc-snippets", "coc-highlight", "coc-yank", "coc-clangd", "coc-pairs", "coc-fish", "coc-pyright","coc-marketplace"]
+let g:coc_global_extensions = ["coc-actions", "coc-vimlsp", "coc-html", "coc-tsserver", "coc-css", "coc-json", "coc-explorer", "coc-snippets", "coc-highlight", "coc-yank", "coc-clangd", "coc-pairs", "coc-fish", "coc-pyright","coc-marketplace","coc-git"]
 
 set updatetime=300
 set shortmess+=c

@@ -27,8 +27,7 @@ if dein#load_state(dein_path)
                 \ 'on_cmd': 'Coc',
                 \ 'hook_add': 'source ~/.config/nvim/plugged_scripts/coc-add.vim',
                 \ 'hook_source':'source ~/.config/nvim/plugged_scripts/coc-source.vim'})
-
-
+    call dein#add('puremourning/vimspector',{'on_cmd':'Vimspector'})
     call dein#add('honza/vim-snippets')
 
     call dein#add('simnalamburt/vim-mundo',

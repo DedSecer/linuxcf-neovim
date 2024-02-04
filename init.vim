@@ -48,7 +48,9 @@ noremap = $
 map U  :redo<CR>
 
 noremap <c-y> "+y
-noremap <c-p> "+gp
+noremap <c-p> "+p
+noremap <LEADER>y "+y
+noremap <LEADER>p "+p
 
 noremap <LEADER><CR> :nohlsearch<CR>
 
